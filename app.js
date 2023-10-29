@@ -34,6 +34,13 @@ io.on("connection", (socket) => {
 
     io.emit("remove_player", socket.id);
   });
+
+  socket.on("move", (mouseCoords) => {
+    if (mouseCoords.id) {
+      players[mouseCoords.id].x = mouseCoords.x;
+      players[mouseCoords.id].y = mouseCoords.x;
+    }
+  });
 });
 
 app.use(function (request, response) {
