@@ -31,6 +31,8 @@ io.on("connection", (socket) => {
     console.log("user disconnected");
     // remove this player from our players object
     delete players[socket.id];
+
+    io.emit("remove_player", socket.id);
   });
 });
 
