@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
     if (mouseCoords.id) {
       players[mouseCoords.id].x = mouseCoords.x;
       players[mouseCoords.id].y = mouseCoords.y;
-      socket.broadcast.emit("move", players[mouseCoords.id]);
+      socket.broadcast.emit("move", players);
     }
   });
 
